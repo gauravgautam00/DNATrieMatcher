@@ -3,6 +3,7 @@
 #include <string.h>
 #include "trie.h"
 
+// Function to add a DNA sequence to the database file
 void add_DNA_to_database(char *sequence)
 {
     FILE *file = fopen("dna_database.txt", "a");
@@ -26,6 +27,7 @@ void add_DNA_to_database(char *sequence)
     printf("DNA '%s' appended to the file successfully.\n", sequence);
 }
 
+// Function to retrieve DNA sequences from the database and insert them into a Trie
 void get_DNA_from_database(Trie *trie)
 {
     FILE *file = fopen("dna_database.txt", "r");
@@ -50,6 +52,7 @@ void get_DNA_from_database(Trie *trie)
     fclose(file);
 }
 
+// Function to remove a DNA sequence from the database file
 void remove_DNA_from_database(const char *sequence)
 {
 
@@ -85,8 +88,9 @@ void remove_DNA_from_database(const char *sequence)
 
     fclose(file);
     fclose(tempFile);
-
-        rename("temp.txt", "dna_database.txt");
+    
+    // Rename the temp file to replace the original database file
+    rename("temp.txt", "dna_database.txt");
     const char *file_path = "./dna_database.txt";
     remove(file_path);
 }
@@ -111,6 +115,7 @@ int main()
         {
 
         case 1:
+            // Add a DNA sequence to the database
             // Assuming a maximum input length of 100 characters
 
             while (1)
@@ -140,7 +145,7 @@ int main()
             }
             break;
         case 2:
-
+            // Search for a DNA sequence in the database
             get_DNA_from_database(trie);
 
             while (1)
@@ -176,7 +181,7 @@ int main()
             }
             break;
         case 3:
-
+            // Search for DNA sequences with a given prefix
             get_DNA_from_database(trie);
             while (1)
             {
@@ -204,7 +209,7 @@ int main()
             break;
 
         case 4:
-
+            // Check if there is a DNA sequence that starts with a given prefix
             get_DNA_from_database(trie);
 
             while (1)
