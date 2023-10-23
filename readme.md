@@ -75,7 +75,3 @@ Please adhere to the following coding standards to maintain consistency in the c
 If you find a bug or have a suggestion for improvement, please open an issue on the GitHub repository. Provide detailed information about the issue and steps to reproduce it if applicable.
 
 Thank you for considering contributing to this project! Your involvement helps to build a vibrant and thriving open-source community.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
